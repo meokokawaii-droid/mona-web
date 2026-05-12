@@ -44,7 +44,7 @@ export function CreativeSection() {
               px-4 py-1.5 rounded-full text-xs tracking-wider transition-all
               ${filter === item.key
                 ? "bg-foreground text-card"
-                : "bg-card text-foreground border border-border hover:border-foreground"
+                : "bg-card text-foreground border border-dashed border-neutral-400/70 hover:border-foreground"
               }
             `}
           >
@@ -56,15 +56,17 @@ export function CreativeSection() {
       {/* 内容列表 */}
       <div className="space-y-3">
         {filteredItems.length === 0 ? (
-          <p className="text-center text-sm text-muted-foreground py-10 px-4">
-            Video 与 Writing 条目可随后在代码里自行添加
-          </p>
+          <div className="paper-card paper-card--soft backdrop-blur-sm py-10 px-4">
+            <p className="text-center text-sm text-muted-foreground">
+              Video 与 Writing 条目可随后在代码里自行添加
+            </p>
+          </div>
         ) : (
           filteredItems.map((item, idx) => (
             <a
               key={idx}
               href={item.link}
-              className="group block bg-card/80 rounded-2xl p-4 border border-border hover:border-foreground/30 transition-all hover:shadow-md"
+              className="paper-card paper-card--soft group block backdrop-blur-sm p-4 transition-all hover:shadow-md"
             >
               <div className="flex items-start gap-4">
                 <div

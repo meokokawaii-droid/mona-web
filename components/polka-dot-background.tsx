@@ -59,13 +59,22 @@ function buildLayerStyle(p: InsPreset): CSSProperties {
 
 const presetBackgrounds: InsPreset[] = [
   {
-    name: "雾粉波点",
-    bg: "#b9a0a8",
-    motif: "#ffffff",
+    name: "蜜桃苏打",
+    bg: "#f5d0d8",
+    motif: "#5c3d2e",
+    dotSize: 2,
+    gap: 18,
+    pattern: "dots",
+    motifAlpha: 0.22,
+  },
+  {
+    name: "青盐灰蓝",
+    bg: "#b4c0ce",
+    motif: "#f4f6fa",
     dotSize: 2,
     gap: 22,
     pattern: "dots",
-    motifAlpha: 0.38,
+    motifAlpha: 0.34,
   },
   {
     name: "豆沙爱心",
@@ -84,15 +93,6 @@ const presetBackgrounds: InsPreset[] = [
     gap: 20,
     pattern: "dots-offset",
     motifAlpha: 0.35,
-  },
-  {
-    name: "蜜桃苏打",
-    bg: "#f5d0d8",
-    motif: "#5c3d2e",
-    dotSize: 2,
-    gap: 18,
-    pattern: "dots",
-    motifAlpha: 0.22,
   },
   {
     name: "芋泥奶盖",
@@ -129,11 +129,13 @@ export function PolkaDotBackground({ children }: PolkaDotBackgroundProps) {
       className="min-h-screen relative transition-[background-color] duration-700"
       style={bgStyle}
     >
+      <div className="site-bg-grain" aria-hidden />
+      <div className="relative z-[2] min-h-screen">{children}</div>
       <button
         type="button"
         data-ins-skip-fx
         onClick={() => setShowPicker(!showPicker)}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-card/95 shadow-lg border-2 border-accent flex items-center justify-center hover:scale-110 hover:rotate-12 transition-all duration-300 backdrop-blur-sm"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-card/95 shadow-lg border border-dashed border-neutral-400/70 flex items-center justify-center hover:scale-110 hover:rotate-12 transition-all duration-300 backdrop-blur-sm"
         aria-label="更换背景"
       >
         <span className="text-2xl">✿</span>
@@ -141,7 +143,7 @@ export function PolkaDotBackground({ children }: PolkaDotBackgroundProps) {
 
       {showPicker && (
         <div
-          className="fixed bottom-24 right-6 z-50 bg-card/95 rounded-3xl shadow-xl border-2 border-accent p-5 w-72 backdrop-blur-md"
+          className="paper-card paper-card--soft fixed bottom-24 right-6 z-50 shadow-xl p-5 w-72 backdrop-blur-md"
           data-ins-skip-fx
         >
           <p className="text-base font-bold text-foreground mb-4 text-center tracking-wide">
@@ -158,11 +160,11 @@ export function PolkaDotBackground({ children }: PolkaDotBackgroundProps) {
                   setShowPicker(false)
                 }}
                 className={`flex flex-col items-center gap-2 p-3 rounded-2xl transition-all hover:scale-105 ${
-                  currentBg.name === preset.name ? "ring-2 ring-accent bg-muted/80" : "hover:bg-muted/50"
+                  currentBg.name === preset.name ? "ring-1 ring-accent/60 bg-muted/80" : "hover:bg-muted/50"
                 }`}
               >
                 <div
-                  className="w-12 h-12 rounded-2xl border-2 border-accent/40 shadow-sm overflow-hidden"
+                  className="w-12 h-12 rounded-[8px] border border-dashed border-neutral-400/50 shadow-sm overflow-hidden"
                   style={buildLayerStyle({ ...preset, gap: 14, dotSize: Math.min(preset.dotSize, 2) })}
                 />
                 <span className="text-[11px] text-foreground font-medium text-center leading-tight">
@@ -174,7 +176,6 @@ export function PolkaDotBackground({ children }: PolkaDotBackgroundProps) {
         </div>
       )}
 
-      {children}
     </div>
   )
 }

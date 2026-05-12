@@ -6,13 +6,14 @@ import { SkillsSection } from "@/components/skills-section"
 import { CreativeSection } from "@/components/creative-section"
 import { TagsSection } from "@/components/tags-section"
 import { Footer } from "@/components/footer"
+import { ContactEnvelope } from "@/components/contact-envelope"
 
 export default function HomePage() {
   return (
     <PolkaDotBackground>
       <main className="py-8 px-4">
         <div className="mx-auto max-w-2xl">
-          <div className="bg-card/60 backdrop-blur-md rounded-3xl p-8 md:p-10 shadow-xl border border-border/30">
+          <div className="paper-card paper-card--soft backdrop-blur-md p-8 md:p-10 shadow-xl">
             <Header />
             <AboutSection />
             <PhotoGallery />
@@ -23,6 +24,7 @@ export default function HomePage() {
           </div>
         </div>
       </main>
+      <ContactEnvelope />
     </PolkaDotBackground>
   )
 }

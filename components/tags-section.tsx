@@ -30,8 +30,8 @@ export function TagsSection() {
           >
             <span
               className={`
-                inline-block px-6 py-3 rounded-2xl text-base font-medium
-                bg-card border-2 border-border text-foreground
+                paper-card paper-card--soft inline-block px-6 py-3 text-base font-medium
+                text-foreground backdrop-blur-sm
                 hover:border-primary hover:shadow-lg
                 transition-all duration-300 cursor-default
                 ${hoveredIndex === idx ? "scale-105 -translate-y-1" : ""}

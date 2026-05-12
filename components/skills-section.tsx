@@ -70,7 +70,7 @@ export function SkillsSection() {
               relative w-12 h-12 rounded-full text-lg font-bold transition-all duration-300
               ${activeCategory === cat.id
                 ? "bg-gradient-to-br " + cat.color + " text-card shadow-lg scale-110"
-                : "bg-card text-foreground hover:bg-muted border-2 border-border hover:border-primary"
+                : "bg-card text-foreground hover:bg-muted border border-dashed border-neutral-400/70 hover:border-primary"
               }
             `}
             title={cat.fullLabel}
@@ -84,7 +84,7 @@ export function SkillsSection() {
       {activeData && (
         <div 
           key={activeData.id}
-          className="bg-card/90 backdrop-blur-sm rounded-3xl p-6 border-2 border-border shadow-lg animate-in fade-in slide-in-from-bottom-4 duration-300"
+          className="paper-card backdrop-blur-sm p-6 shadow-lg animate-in fade-in slide-in-from-bottom-4 duration-300"
         >
           <h3 className="text-center text-foreground mb-4 text-sm tracking-wider">
             {activeData.fullLabel}
@@ -94,7 +94,7 @@ export function SkillsSection() {
             {activeData.items.map((item, idx) => (
               <span
                 key={idx}
-                className="px-4 py-2 bg-muted/50 rounded-full text-foreground text-sm border border-border/50 hover:border-primary/50 transition-all cursor-default"
+                className="px-4 py-2 bg-muted/50 rounded-full text-foreground text-sm border border-dashed border-neutral-400/60 hover:border-primary/50 transition-all cursor-default"
                 style={{ animationDelay: `${idx * 100}ms` }}
               >
                 {item}
@@ -111,7 +111,7 @@ export function SkillsSection() {
                 {activeData.subsection.items.map((item, idx) => (
                   <span
                     key={idx}
-                    className="px-4 py-2 bg-muted/50 rounded-full text-foreground text-sm border border-border/50 hover:border-primary/50 transition-all cursor-default"
+                    className="px-4 py-2 bg-muted/50 rounded-full text-foreground text-sm border border-dashed border-neutral-400/60 hover:border-primary/50 transition-all cursor-default"
                   >
                     {item}
                   </span>
