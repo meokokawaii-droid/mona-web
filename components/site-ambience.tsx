@@ -143,7 +143,7 @@ export function SiteAmbience() {
         className="fixed bottom-6 left-6 z-[60] flex flex-col items-start gap-2"
         data-ins-skip-fx
       >
-        <div className="paper-card paper-card--soft flex items-center gap-2 px-2 py-1.5 shadow-lg backdrop-blur-md">
+        <div className="flex items-center gap-2 rounded-full border-2 border-border/80 bg-card/90 px-2 py-1.5 shadow-lg backdrop-blur-md">
           <button
             type="button"
             onClick={togglePlay}
@@ -172,7 +172,7 @@ export function SiteAmbience() {
         </div>
 
         {expanded && (
-          <div className="paper-card paper-card--soft max-w-[220px] px-3 py-2 text-xs text-muted-foreground shadow-md backdrop-blur-md">
+          <div className="max-w-[220px] rounded-2xl border border-border/60 bg-card/95 px-3 py-2 text-xs text-muted-foreground shadow-md backdrop-blur-md">
             <p className="font-medium text-foreground">正在轮换</p>
             <ul className="mt-1 space-y-0.5 pl-0">
               {BGM_TRACKS.map((t, i) => (

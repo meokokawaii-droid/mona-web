@@ -29,30 +29,22 @@ export function PhotoGallery() {
         {photos.map((photo, index) => (
           <div
             key={index}
-            className="group relative aspect-square overflow-hidden rounded-[8px] border border-dashed border-neutral-400/70 shadow-sm bg-card/40 backdrop-blur-[2px]"
+            className="group relative aspect-square overflow-hidden rounded-xl border border-border/50 shadow-sm bg-card"
           >
-            <div
-              className="pointer-events-none absolute inset-0 z-0 bg-repeat opacity-[0.05]"
-              style={{
-                backgroundImage: "url(/paper-lace.svg)",
-                backgroundSize: "88px 88px",
-              }}
-              aria-hidden
-            />
             <Image
               src={photo.src}
               alt={photo.alt}
               fill
-              className="relative z-[1] object-cover transition-transform duration-500 group-hover:scale-110"
+              className="object-cover transition-transform duration-500 group-hover:scale-110"
               style={{ objectPosition: photo.objectPosition }}
             />
-            <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-t from-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
         ))}
       </div>
       
       <p className="text-center text-sm text-muted-foreground mt-4">
-        点击右下角更改主题
+        点击右下角小花按钮可更换 ins 风底纹
       </p>
     </section>
   )

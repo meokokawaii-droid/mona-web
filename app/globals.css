@@ -4,46 +4,31 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* 薄荷巧克力配色 */
-  --background: #f0fdf4;
-  --foreground: #3d2314;
-  --card: #f8fefa;
-  --card-foreground: #3d2314;
-  --popover: #f8fefa;
-  --popover-foreground: #3d2314;
-  --primary: #6b9080;
-  --primary-foreground: #f8fefa;
-  --secondary: #a4c3b2;
-  --secondary-foreground: #3d2314;
-  --muted: #cce3de;
-  --muted-foreground: #5c4033;
-  --accent: #8b5a2b;
-  --accent-foreground: #f8fefa;
+  /* 换成：清冷文艺奶茶配色 */
+  --background: #FAF9F6;      /* 极浅的奶白色背景 */
+  --foreground: #4A4A4A;      /* 深灰色文字，比纯黑更高级 */
+  --card: #FFFFFF;            /* 纯白卡片 */
+  --card-foreground: #4A4A4A;
+  --popover: #FFFFFF;
+  --popover-foreground: #4A4A4A;
+  --primary: #D8A7B1;         /* 莫兰迪粉，作为点缀 */
+  --primary-foreground: #FFFFFF;
+  --secondary: #E5E5E5;       /* 浅灰色 */
+  --secondary-foreground: #4A4A4A;
+  --muted: #F5F5F5;
+  --muted-foreground: #8E8E8E;
+  --accent: #B8978E;          /* 奶茶色 */
+  --accent-foreground: #FFFFFF;
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: #a4c3b2;
-  --input: #cce3de;
-  --ring: #6b9080;
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  /* 信纸风卡片 */
-  --paper-border: 1px dashed #d4d4d4;
-  --paper-radius: 8px;
-  --paper-lace: url("/paper-lace.svg");
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --destructive-foreground: #FFFFFF;
+  
+  /* 重点：彻底杀掉绿色边框 */
+  --border: #E5E5E5;          /* 边框变浅灰，几乎看不见 */
+  --input: #E5E5E5;
+  --ring: #D8A7B1;            /* 点击时的光晕变浅粉 */
+  
+  --radius: 1.25rem;          /* 圆角稍微大一点，更柔和 */
 }
-
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -64,7 +49,6 @@
   --border: oklch(0.269 0 0);
   --input: oklch(0.269 0 0);
   --ring: oklch(0.439 0 0);
-  --paper-border: 1px dashed rgba(255, 255, 255, 0.22);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
@@ -151,33 +135,6 @@
     transform: scale(2.15);
     opacity: 0;
   }
-}
-
-/* 全页微弱噪点（叠在页面底纹之上） */
-.site-bg-grain {
-  pointer-events: none;
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  min-height: 100%;
-  opacity: 0.038;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 160px 160px;
-}
-
-/* 信纸卡片：虚线框 + 8px 圆角 + 淡蕾丝平铺 */
-.paper-card {
-  border: var(--paper-border);
-  border-radius: var(--paper-radius);
-  background-color: color-mix(in srgb, var(--card) 84%, transparent);
-  background-image: var(--paper-lace);
-  background-size: 88px 88px;
-  background-repeat: repeat;
-}
-
-.paper-card--soft {
-  background-color: color-mix(in srgb, var(--card) 72%, transparent);
 }
 
 @layer base {

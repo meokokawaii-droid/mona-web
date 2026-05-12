@@ -17,7 +17,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: '萌萌 Mona Meoko | 个人主页',
+  title: '萌 Mona Meoko | 个人主页',
   description: '22岁 / 日语学习中 / 自由灵魂 - 热爱社会学、政治学与一切表达自我的事物',
   generator: 'v0.app',
   icons: {
