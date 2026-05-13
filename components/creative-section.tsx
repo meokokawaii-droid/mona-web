@@ -15,6 +15,25 @@ const creativeItems: {
     description: "大隐于市",
     link: "#",
   },
+  {
+    type: "writing",
+    title: "吃人者记",
+    description: "吃人就是一种顺其自然的规则；一种安居乐业的诅咒 ",
+    link: "/writing/cannibalism",
+  },
+  {
+    type: "writing",
+    title: "死",
+    description: "当活着的时候，有人说：又一个幸福的人出生了...",
+    link: "/writing/life-and-death",
+  },
+  // 🌿 第三篇：关于成长与和解的自白
+  {
+    type: "writing",
+    title: "此心安处是吾乡",
+    description: "二十二岁，终于和我厌弃的一切达成了一种微妙的认同。",
+    link: "/writing/inner-peace",
+  },
 ]
 
 export function CreativeSection() {

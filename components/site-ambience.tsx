@@ -4,9 +4,9 @@ import { useCallback, useEffect, useRef, useState } from "react"
 import { Music2, Pause, SkipForward, Volume2 } from "lucide-react"
 
 const BGM_TRACKS = [
-  { title: "NewJeans — Ditto", src: "/audio/ditto.mp3" },
-  { title: "Mystery of Love", src: "/audio/mystery-of-love.mp3" },
-  { title: "NewJeans — Hurt", src: "/audio/hurt.mp3" },
+  { title: "NewJeans — ditto", src: "/audio/ditto.mp3" },
+  { title: "Mystery of Love", src: "/audio/Mystery of Love.mp3" },
+  { title: "hearts2hearts - Butterflies", src: "/audio/hearts2hearts - Butterflies.mp3" },
 ] as const
 
 function playSoftClickSound(audioCtx: AudioContext | null) {
