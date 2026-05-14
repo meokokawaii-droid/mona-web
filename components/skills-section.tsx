@@ -20,7 +20,7 @@ const categories: Category[] = [
     fullLabel: "语言",
     color: "from-primary to-secondary",
     items: [
-      "逃离方块秩序",
+      "方块秩序",
       "Crafting my own syntax",
       "新しい自分を、模索中",
     ],
