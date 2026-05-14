@@ -25,10 +25,9 @@ export default function HomePage() {
             <PhotoGallery />
             <SkillsSection />
             
-            {/* 给创意板块传入控制开关，让它能被点开 */}
-            <div onClick={() => setIsVideoOpen(true)} className="cursor-pointer">
-              <CreativeSection />
-            </div>
+            {/* ✨ 修复点：删掉了包裹在表层的 onClick div */}
+            {/* 现在直接把控制开关传给组件，让组件内部去决定哪里可以点 */}
+            <CreativeSection onOpenVideo={() => setIsVideoOpen(true)} />
 
             {/* 2. 将愿望清单放在这里，设置一个上间距 mt-12 让排版不拥挤 */}
             <div className="mt-12">

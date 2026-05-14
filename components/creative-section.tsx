@@ -3,6 +3,11 @@
 import { useState } from "react"
 import { Play, FileText, ChevronRight } from "lucide-react"
 
+// 定义接收的属性类型
+interface CreativeSectionProps {
+  onOpenVideo?: () => void
+}
+
 const creativeItems: {
   type: "video" | "writing"
   title: string
@@ -33,7 +38,6 @@ const creativeItems: {
     description: "二十二岁，终于和我厌弃的一切达成了一种微妙的认同。",
     link: "/writing/inner-peace",
   },
-  // ✨ 在这里加上这一段：
   {
     type: "writing",
     title: "刺穿",
@@ -48,7 +52,8 @@ const creativeItems: {
   },
 ]
 
-export function CreativeSection() {
+// ✨ 1. 在这里加入 { onOpenVideo } 接收参数
+export function CreativeSection({ onOpenVideo }: CreativeSectionProps) {
   const [filter, setFilter] = useState<"all" | "video" | "writing">("all")
 
   const filteredItems = filter === "all" 
@@ -94,6 +99,13 @@ export function CreativeSection() {
             <a
               key={idx}
               href={item.link}
+              // ✨ 2. 关键修复：如果是视频，拦截跳转并触发弹窗
+              onClick={(e) => {
+                if (item.type === "video" && onOpenVideo) {
+                  e.preventDefault(); // 阻止浏览器直接打开视频链接
+                  onOpenVideo();      // 触发 HomePage 里的弹窗函数
+                }
+              }}
               className="group block bg-card/80 rounded-2xl p-4 border border-border hover:border-foreground/30 transition-all hover:shadow-md"
             >
               <div className="flex items-start gap-4">
