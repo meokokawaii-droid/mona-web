@@ -44,7 +44,7 @@ export function PhotoGallery() {
       </div>
       
       <p className="text-center text-sm text-muted-foreground mt-4">
-        点击右下角小花按钮可更换展示主题
+        点击右下角小花按钮可更换展示主题=v=
       </p>
     </section>
   )

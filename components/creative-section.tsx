@@ -27,12 +27,24 @@ const creativeItems: {
     description: "当活着的时候，有人说：又一个幸福的人出生了...",
     link: "/writing/life-and-death",
   },
-  // 🌿 第三篇：关于成长与和解的自白
   {
     type: "writing",
     title: "此心安处是吾乡",
     description: "二十二岁，终于和我厌弃的一切达成了一种微妙的认同。",
     link: "/writing/inner-peace",
+  },
+  // ✨ 在这里加上这一段：
+  {
+    type: "writing",
+    title: "刺穿",
+    description: "杀死那个所谓评价的体系。为何任何目光都将要给予审判的权利？",
+    link: "/writing/judgement",
+  }, 
+  {
+    type: "writing",
+    title: "不是我",
+    description: "那些杀不死我的也并没有让我变得强大。But that's not mine.",
+    link: "/writing/not-mine",
   },
 ]
 
