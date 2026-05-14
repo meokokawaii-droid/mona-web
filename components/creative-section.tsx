@@ -13,7 +13,7 @@ const creativeItems: {
     type: "video",
     title: "精神流民",
     description: "大隐于市",
-    link: "#",
+    link: "/video/mevideo1.mp4",
   },
   {
     type: "writing",
@@ -88,7 +88,6 @@ export function CreativeSection() {
       <div className="space-y-3">
         {filteredItems.length === 0 ? (
           <p className="text-center text-sm text-muted-foreground py-10 px-4">
-            Video 与 Writing 条目可随后在代码里自行添加
           </p>
         ) : (
           filteredItems.map((item, idx) => (
