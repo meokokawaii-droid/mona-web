@@ -119,7 +119,7 @@ interface PolkaDotBackgroundProps {
 }
 
 export function PolkaDotBackground({ children }: PolkaDotBackgroundProps) {
-  const [currentBg, setCurrentBg] = useState(presetBackgrounds[0])
+  const [currentBg, setCurrentBg] = useState(presetBackgrounds[5])
   const [showPicker, setShowPicker] = useState(false)
 
   const bgStyle = useMemo(() => buildLayerStyle(currentBg), [currentBg])
