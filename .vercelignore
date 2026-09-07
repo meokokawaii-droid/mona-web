@@ -1,0 +1,9 @@
+.codex-temp/
+.next/
+node_modules/
+public/images/journal/floral-washi-source.png
+*.log
+
+# Never upload private credentials or local environment files
+.env*
+!.env.survey.example
